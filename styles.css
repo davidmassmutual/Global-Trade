@@ -165,15 +165,51 @@ nav a:hover {
 /* Hero Section */
 .hero {
     padding: 160px 0 100px;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('business-team-investment-trading-do-260nw-707850085.webp');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./business-team-investment-trading-do-260nw-707850085.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: white;
+    color: #ffffff;
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
+}
+
+/* Hero Background Image Container */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.6);
+    transition: filter 0.3s ease;
+}
+
+.hero:hover .hero-img {
+    filter: brightness(0.7);
+}
+
+/* Vercel-specific image loading fix */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('business-team-investment-trading-do-260nw-707850085.webp');
+}
+
+/* Additional Vercel compatibility */
+@media (min-width: 1px) {
+    .hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('business-team-investment-trading-do-260nw-707850085.webp');
+    }
 }
 
 /* Enhanced overlay for better text readability */
@@ -184,7 +220,7 @@ nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
     z-index: 1;
 }
 
@@ -225,6 +261,7 @@ nav a:hover {
 .hero-subtitle {
     font-size: 1.2rem;
     margin-bottom: 3rem;
+    color: #e5e7eb;
     opacity: 0.9;
 }
 
@@ -710,9 +747,22 @@ nav a:hover {
 /* CTA Section */
 .cta {
     padding: 100px 0;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    background: linear-gradient(135deg, #1f2937, #374151);
     color: white;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(37, 99, 235, 0.3) 0%, transparent 70%);
+    z-index: 0;
 }
 
 .cta h2 {
@@ -728,9 +778,37 @@ nav a:hover {
 
 .cta-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.cta .btn-primary {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.cta .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
+}
+
+.cta .btn-outline {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.cta .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
 }
 
 /* Footer */
