@@ -211,7 +211,7 @@ nav a:hover {
 /* Hero Section */
 .hero {
     padding: 160px 0 100px;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./business-team-investment-trading-do-260nw-707850085.webp');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./pexels-tima-miroshnichenko-7567426.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -248,13 +248,13 @@ nav a:hover {
 
 /* Vercel-specific image loading fix */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('business-team-investment-trading-do-260nw-707850085.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('pexels-tima-miroshnichenko-7567426.jpg');
 }
 
 /* Additional Vercel compatibility */
 @media (min-width: 1px) {
     .hero {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('business-team-investment-trading-do-260nw-707850085.webp');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('pexels-tima-miroshnichenko-7567426.jpg');
     }
 }
 
@@ -878,10 +878,13 @@ footer {
 
 .footer-section ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .footer-section li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
 }
 
 .footer-section a {
@@ -1032,10 +1035,26 @@ footer {
     }
     
     .btn-large {
+        padding: 12px 24px;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    /* Reduce button sizes for mobile view */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-buttons .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+    
+    .cta-buttons .btn {
         padding: 14px 28px;
         font-size: 1.1rem;
-        width: 100%;
-        max-width: 300px;
     }
     
     .container {
